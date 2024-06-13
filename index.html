@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Display</title>
+    <title>Bus List Display</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
         }
-        #dataDisplay {
+        #busListDisplay {
             margin-top: 20px;
             padding: 10px;
             border: 1px solid #ccc;
@@ -17,11 +17,15 @@
     </style>
 </head>
 <body>
-    <h1>Select a Person</h1>
-    <select id="dropdown">
-        <option value="">--Select a person--</option>
+    <h1>Select a Name</h1>
+    <select id="nameDropdown">
+        <option value="">--Select a name--</option>
+        <option value="Jesse">Jesse</option>
+        <option value="Kristi">Kristi</option>
+        <option value="Lexi">Lexi</option>
+        <option value="Ellie">Ellie</option>
     </select>
-    <div id="dataDisplay"></div>
+    <div id="busListDisplay"></div>
 
     <script src="script.js"></script>
 </body>
