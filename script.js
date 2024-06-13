@@ -9,14 +9,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const nameDropdown = document.getElementById('nameDropdown');
     const busListDisplay = document.getElementById('busListDisplay');
 
+    // Populate dropdown and set previously selected name
+    const selectedName = localStorage.getItem('selectedName');
+    for (const name in data) {
+        const option = document.createElement('option');
+        option.value = name;
+        option.textContent = name;
+        if (name === selectedName) {
+            option.selected = true;
+        }
+        nameDropdown.appendChild(option);
+    }
+
+    // Display bus list for the previously selected name
+    if (selectedName) {
+        displayBusList(selectedName);
+    }
+
     nameDropdown.addEventListener('change', function () {
         const selectedName = nameDropdown.value;
-        const busList = data[selectedName];
+        localStorage.setItem('selectedName', selectedName);
+        displayBusList(selectedName);
+    });
 
+    function displayBusList(name) {
+        const busList = data[name];
         if (busList) {
-            busListDisplay.innerHTML = `<p><strong>Bus List for ${selectedName}:</strong></p><ol>${busList.map(bus => `<li>${bus}</li>`).join('')}</ol>`;
+            busListDisplay.innerHTML = `
+                <p><strong>Bus List for ${name}:</strong></p>
+                <ol>${busList.map(bus => `<li>${bus}</li>`).join('')}</ol>
+            `;
         } else {
             busListDisplay.innerHTML = '';
         }
-    });
+    }
 });
