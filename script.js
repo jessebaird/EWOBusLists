@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const busList = data[selectedName];
 
         if (busList) {
-            busListDisplay.innerHTML = `<p><strong>Bus List for ${selectedName}:</strong></p><ul>${busList.map(bus => `<li>${bus}</li>`).join('')}</ul>`;
+            busListDisplay.innerHTML = `<p><strong>Bus List for ${selectedName}:</strong></p><ol>${busList.map(bus => `<li>${bus}</li>`).join('')}</ol>`;
         } else {
             busListDisplay.innerHTML = '';
         }
