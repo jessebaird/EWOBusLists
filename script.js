@@ -1,35 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const data = [
-        { id: 1, name: 'John Doe', age: 28, city: 'New York' },
-        { id: 2, name: 'Jane Smith', age: 34, city: 'Los Angeles' },
-        { id: 3, name: 'Michael Johnson', age: 45, city: 'Chicago' },
-        { id: 4, name: 'Emily Davis', age: 23, city: 'Houston' }
-    ];
+    const data = {
+        Jesse: ["Benny", "Rental 2", "Benny", "Shac", "Benny", "Rac"],
+        Kristi: ["Rac", "Benny", "Rental 2", "Rac", "Shac", "Benny"],
+        Lexi: ["Rac", "Shac", "Rental 1", "Rental 2", "Rac", "Shac"],
+        Ellie: ["Rac", "Rental 1", "Shac", "Benny", "Rac", "Rental 2"]
+    };
 
-    const dropdown = document.getElementById('dropdown');
-    const dataDisplay = document.getElementById('dataDisplay');
+    const nameDropdown = document.getElementById('nameDropdown');
+    const busListDisplay = document.getElementById('busListDisplay');
 
-    // Populate the dropdown
-    data.forEach(person => {
-        const option = document.createElement('option');
-        option.value = person.id;
-        option.textContent = person.name;
-        dropdown.appendChild(option);
-    });
+    nameDropdown.addEventListener('change', function () {
+        const selectedName = nameDropdown.value;
+        const busList = data[selectedName];
 
-    // Add event listener to dropdown
-    dropdown.addEventListener('change', function () {
-        const selectedId = parseInt(dropdown.value);
-        const selectedPerson = data.find(person => person.id === selectedId);
-
-        if (selectedPerson) {
-            dataDisplay.innerHTML = `
-                <p><strong>Name:</strong> ${selectedPerson.name}</p>
-                <p><strong>Age:</strong> ${selectedPerson.age}</p>
-                <p><strong>City:</strong> ${selectedPerson.city}</p>
-            `;
+        if (busList) {
+            busListDisplay.innerHTML = `<p><strong>Bus List for ${selectedName}:</strong></p><ul>${busList.map(bus => `<li>${bus}</li>`).join('')}</ul>`;
         } else {
-            dataDisplay.innerHTML = '';
+            busListDisplay.innerHTML = '';
         }
     });
 });
