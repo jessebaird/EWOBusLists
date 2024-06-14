@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
     const data = {
         Jesse: [
-            { busList: "Bus List 1", vehicle: "Rental 2" },
-            { busList: "Bus List 2", vehicle: "Shac" },
-            { busList: "Bus List 3", vehicle: "Rac" }
+            { "Rental 2" },
+            { "Shac" },
+            { "Rac" }
         ],
         Kristi: [
-            { busList: "Bus List 1", vehicle: "Rental 2" },
-            { busList: "Bus List 2", vehicle: "Shac" },
-            { busList: "Bus List 3", vehicle: "Rac" }
+            { "Rental 2" },
+            { "Shac" },
+            { "Rac" }
         ],
         Lexi: [
-            { busList: "Bus List 1", vehicle: "Rental 2" },
-            { busList: "Bus List 2", vehicle: "Shac" },
-            { busList: "Bus List 3", vehicle: "Rac" }
+            { "Rental 2" },
+            { "Shac" },
+            { "Rac" }
         ],
         Ellie: [
-            { busList: "Bus List 1", vehicle: "Rental 2" },
-            { busList: "Bus List 2", vehicle: "Shac" },
-            { busList: "Bus List 3", vehicle: "Rac" }
+            { "Rental 2" },
+            { "Shac" },
+            { "Rac" }
         ],
         // Add more names and their corresponding data as needed
     };
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let html = `<p><strong>Bus List and Vehicle for ${name}:</strong></p>`;
             html += '<ol>';
             entries.forEach(entry => {
-                html += `<li>${entry.vehicle}</li>`;
+                html += `<li>${entry}</li>`;
             });
             html += '</ol>';
             busListDisplay.innerHTML = html;
