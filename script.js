@@ -44,11 +44,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const entries = data[name];
         if (entries) {
             let html = `<p><strong>Bus List and Vehicle for ${name}:</strong></p>`;
-            html += '<ul>';
+            html += '<ol>';
             entries.forEach(entry => {
-                html += `<li>${entry.busList}, ${entry.vehicle}</li>`;
+                html += `<li>${entry.vehicle}</li>`;
             });
-            html += '</ul>';
+            html += '</ol>';
             busListDisplay.innerHTML = html;
         } else {
             busListDisplay.innerHTML = '';
