@@ -1,25 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const data = {
-        Jesse: [
-            { "Rental 2" },
-            { "Shac" },
-            { "Rac" }
-        ],
-        Kristi: [
-            { "Rental 2" },
-            { "Shac" },
-            { "Rac" }
-        ],
-        Lexi: [
-            { "Rental 2" },
-            { "Shac" },
-            { "Rac" }
-        ],
-        Ellie: [
-            { "Rental 2" },
-            { "Shac" },
-            { "Rac" }
-        ],
+"Adam Jun": [ {  " Rental 1" }, { " Rental 2" }, { " Rental 1" }, { " Rac" }, { " Benny" }, { " Rental 2" }, { " Shac" } ],
+"Addy Jeffrey": [ {  " Benny" }, { " Rac" }, { " Benny" }, { " Shac" }, { " Rac" }, { " Shac" }, { " Rac" } ],
+"Aine Staggs": [ {  " Rac" }, { " Benny" }, { " Rental 2" }, { " Rental 2" }, { " Shac" }, { " Rental 2" }, { " Benny" } ],
+"Alyssa Thompson": [ {  " Rac" }, { " Shac" }, { " Shac" }, { " Rac" }, { " Rac" }, { " Rental 2" }, { " Benny" } ],
         // Add more names and their corresponding data as needed
     };
 
