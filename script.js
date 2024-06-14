@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let html = `<p><strong>Bus List and Vehicle for ${name}:</strong></p>`;
             html += '<ul>';
             entries.forEach(entry => {
-                html += `<li><strong>Bus List:</strong> ${entry.busList}, <strong>Vehicle:</strong> ${entry.vehicle}</li>`;
+                html += `<li>${entry.busList}, ${entry.vehicle}</li>`;
             });
             html += '</ul>';
             busListDisplay.innerHTML = html;
