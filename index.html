@@ -8,21 +8,75 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        #busListDisplay {
+        #container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        h1 {
+            font-size: 1.5em;
+            text-align: center;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        #vehicleDisplay {
             margin-top: 20px;
             padding: 10px;
             border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #77A5E3;
+        }
+        tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+        tr:nth-child(odd) {
+            background-color: #DEECFF;
+        }
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            h1 {
+                font-size: 1.2em;
+            }
+            select {
+                font-size: 1em;
+            }
+            #vehicleDisplay {
+                font-size: 1em;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Select a Name</h1>
-    <select id="nameDropdown">
-        <option value="">--Select a name--</option>
-        <!-- Options will be populated dynamically using JavaScript -->
-    </select>
-    <div id="busListDisplay"></div>
+    <div id="container">
+        <h1>Select a Name</h1>
+        <select id="nameDropdown">
+            <option value="">--Select a name--</option>
+            <!-- Options will be populated dynamically using JavaScript -->
+        </select>
+        <div id="vehicleDisplay"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>
