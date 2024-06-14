@@ -1,44 +1,55 @@
 document.addEventListener('DOMContentLoaded', function () {
     const data = {
-        Jesse: ["Benny", "Rental 2", "Benny", "Shac", "Benny", "Rac"],
-        Kristi: ["Rac", "Benny", "Rental 2", "Rac", "Shac", "Benny"],
-        Lexi: ["Rac", "Shac", "Rental 1", "Rental 2", "Rac", "Shac"],
-        Ellie: ["Rac", "Rental 1", "Shac", "Benny", "Rac", "Rental 2"]
+        Jesse: [
+            { busList: "Bus List 1", vehicle: "Rental 2" },
+            { busList: "Bus List 2", vehicle: "Shac" },
+            { busList: "Bus List 3", vehicle: "Rac" }
+        ],
+        Kristi: [
+            { busList: "Bus List 1", vehicle: "Rental 2" },
+            { busList: "Bus List 2", vehicle: "Shac" },
+            { busList: "Bus List 3", vehicle: "Rac" }
+        ],
+        Lexi: [
+            { busList: "Bus List 1", vehicle: "Rental 2" },
+            { busList: "Bus List 2", vehicle: "Shac" },
+            { busList: "Bus List 3", vehicle: "Rac" }
+        ],
+        Ellie: [
+            { busList: "Bus List 1", vehicle: "Rental 2" },
+            { busList: "Bus List 2", vehicle: "Shac" },
+            { busList: "Bus List 3", vehicle: "Rac" }
+        ],
+        // Add more names and their corresponding data as needed
     };
 
     const nameDropdown = document.getElementById('nameDropdown');
     const busListDisplay = document.getElementById('busListDisplay');
 
-    // Populate dropdown and set previously selected name
-    const selectedName = localStorage.getItem('selectedName');
+    // Populate dropdown with names
     for (const name in data) {
         const option = document.createElement('option');
         option.value = name;
         option.textContent = name;
-        if (name === selectedName) {
-            option.selected = true;
-        }
         nameDropdown.appendChild(option);
     }
 
-    // Display bus list for the previously selected name
-    if (selectedName) {
-        displayBusList(selectedName);
-    }
-
+    // Event listener for dropdown change
     nameDropdown.addEventListener('change', function () {
         const selectedName = nameDropdown.value;
-        localStorage.setItem('selectedName', selectedName);
-        displayBusList(selectedName);
+        displayBusListAndVehicles(selectedName);
     });
 
-    function displayBusList(name) {
-        const busList = data[name];
-        if (busList) {
-            busListDisplay.innerHTML = `
-                <p><strong>Bus List for ${name}:</strong></p>
-                <ol>${busList.map(bus => `<li>${bus}</li>`).join('')}</ol>
-            `;
+    function displayBusListAndVehicles(name) {
+        const entries = data[name];
+        if (entries) {
+            let html = `<p><strong>Bus List and Vehicle for ${name}:</strong></p>`;
+            html += '<ul>';
+            entries.forEach(entry => {
+                html += `<li><strong>Bus List:</strong> ${entry.busList}, <strong>Vehicle:</strong> ${entry.vehicle}</li>`;
+            });
+            html += '</ul>';
+            busListDisplay.innerHTML = html;
         } else {
             busListDisplay.innerHTML = '';
         }
