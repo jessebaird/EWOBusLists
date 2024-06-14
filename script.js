@@ -111,4 +111,4 @@ document.addEventListener('DOMContentLoaded', function () {
             vehicleDisplay.innerHTML = '';
         }
     }
-});
+}); 
