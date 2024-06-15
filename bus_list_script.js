@@ -135,11 +135,23 @@ document.addEventListener('DOMContentLoaded', function () {
             html += '</tr></thead><tbody>';
 
             const maxPassengers = Math.max(...vehicles.map(vehicle => vehicle.passengers.length));
-
+/*
             for (let i = 0; i < maxPassengers; i++) {
                 html += '<tr>';
                 vehicles.forEach(vehicle => {
                     html += `<td>${vehicle.passengers[i] || ''}</td>`;
+                });
+                html += '</tr>';
+            }
+*/
+            for (let i = 0; i < maxPassengers; i++) {
+                html += '<tr>';
+                vehicles.forEach(vehicle => {
+                    let passenger = vehicle.passengers[i] || '';
+                    if (i < 2) {
+                        passenger = `<i>${passenger}</i>`; // Italicize the first two passengers
+                    }
+                    html += `<td>${passenger}</td>`;
                 });
                 html += '</tr>';
             }
