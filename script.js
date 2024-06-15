@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function displayVehicles(name) {
         const vehicles = data[name];
         if (vehicles) {
-            let html = `<p><strong>Vehicles for ${name}:</strong></p>`;
+            let html = `<p><h2><strong>Vehicles for ${name}:</strong></h2></p>`;
             html += '<table>';
             html += '<tr><th>Bus List</th><th>Vehicle</th></tr>';
             vehicles.forEach((vehicle, index) => {
